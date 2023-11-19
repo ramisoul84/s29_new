@@ -1,0 +1,143 @@
+@import "../index.scss";
+
+// Timing Variables
+$slide-down-duration: 0.6s;
+$slide-down-delay: 0.08s;
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+// Common Effects
+@mixin gradient($layer, $opacity) {
+  position: absolute;
+  top: calc($layer * $gradient-height);
+  left: 0;
+  right: 0;
+  height: $gradient-height;
+  opacity: $opacity;
+  background: linear-gradient(90deg, $color-gradient-1, $color-gradient-2);
+}
+@mixin slide-down($layer, $duration, $delay) {
+  animation: slide-down-animation $duration cubic-bezier(0.08, 0.42, 0, 0.79)
+    calc($layer * $delay) both;
+}
+@mixin slide-up($duration, $delay) {
+  animation: slide-up-animation $duration cubic-bezier(0.08, 0.42, 0, 0.79)
+    $delay both;
+}
+
+// Header layers ..
+.gradient-1 {
+  @include gradient(0, 1);
+}
+.gradient-2 {
+  @include gradient(1, 0.85);
+}
+.gradient-3 {
+  @include gradient(2, 0.55);
+}
+.gradient-4 {
+  @include gradient(3, 0.4);
+}
+.gradient-5 {
+  @include gradient(4, 0.25);
+}
+.gradient-6 {
+  @include gradient(5, 0.17);
+}
+// Sliding DOWN
+.down-1 {
+  @include slide-down(0, $slide-down-duration, $slide-down-delay);
+}
+.down-2 {
+  @include slide-down(1, $slide-down-duration, $slide-down-delay);
+}
+.down-3 {
+  @include slide-down(2, $slide-down-duration, $slide-down-delay);
+}
+.down-4 {
+  @include slide-down(3, $slide-down-duration, $slide-down-delay);
+}
+.down-5 {
+  @include slide-down(4, $slide-down-duration, $slide-down-delay);
+}
+.down-6 {
+  @include slide-down(5, $slide-down-duration, $slide-down-delay);
+}
+// Sliding UP
+.up-4 {
+  @include slide-up(0.3s, 0.1s);
+}
+.up-5 {
+  @include slide-up(0.3s, 0.05s);
+}
+.up-6 {
+  @include slide-up(0.3s, 0s);
+}
+// Sliding LEFT
+.left-1 {
+  animation: slide-left-animation-1 0.4s cubic-bezier(0.09, 0.96, 0.78, 0.92)
+    0.4s both;
+}
+.left-2-3 {
+  animation: slide-left-animation-2-3 0.4s cubic-bezier(0.09, 0.96, 0.78, 0.92)
+    0.4s both;
+}
+// Sliding RIGHT
+.right {
+  animation: slide-right-animation 0.24s ease-in both;
+}
+
+// ANIMATIONS
+@keyframes slide-down-animation {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: $gradient-height;
+  }
+}
+@keyframes slide-up-animation {
+  0% {
+    height: $gradient-height;
+  }
+  100% {
+    height: 0;
+  }
+}
+@keyframes slide-left-animation-1 {
+  0% {
+    height: $gradient-height;
+    width: 100%;
+    z-index: 2;
+  }
+  50% {
+    height: calc(3 * $gradient-height);
+  }
+  100% {
+    height: calc(3 * $gradient-height);
+    width: calc(3 * $gradient-height);
+    z-index: 2;
+  }
+}
+@keyframes slide-left-animation-2-3 {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: calc(3 * $gradient-height);
+  }
+}
+
+@keyframes slide-right-animation {
+  0% {
+    width: calc(3 * $gradient-height);
+  }
+  100% {
+    width: 100%;
+  }
+}

@@ -1,0 +1,61 @@
+// Importing fonts ..
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
+@font-face {
+  font-family: "lcd_solidregular";
+  src: url("assets/fonts/lcdsolid/lcdsolid-vpzb-webfont.woff2") format("woff2"),
+    url("assets/fonts/lcdsolid/lcdsolid-vpzb-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Variables
+$color-bg-1: #000000;
+$color-bg-2: #1f2935;
+$color-txt: #ffffff;
+$color-grid: rgba(196, 202, 196, 0.15);
+$color-gradient-1: #73c046;
+$color-gradient-2: #cb866d;
+$grid-width: 1.3rem;
+$grid-stroke-width: 1px;
+$gradient-height: 1.3rem;
+$font-lcd: "lcd_solidregular";
+$font-mon: "Montserrat";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+html {
+  width: calc(100vw - 1.2rem);
+  height: fit-content;
+  background: linear-gradient($color-bg-1, $color-bg-2);
+  overflow-x: hidden;
+}
+
+.main-grid {
+  width: 100%;
+  background-image: linear-gradient(
+      $color-grid $grid-stroke-width,
+      transparent 1px
+    ),
+    linear-gradient(90deg, $color-grid 1px, transparent $grid-stroke-width);
+  background-size: $grid-width $grid-width;
+  color: $color-txt;
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+  font-family: $font-lcd;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
