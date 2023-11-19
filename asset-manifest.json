@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/s29_new/static/css/main.9187f138.css",
+    "main.js": "/s29_new/static/js/main.9d626073.js",
+    "static/media/lcdsolid-vpzb-webfont.woff": "/s29_new/static/media/lcdsolid-vpzb-webfont.0dcf3e65e4028043a92d.woff",
+    "static/media/lcdsolid-vpzb-webfont.woff2": "/s29_new/static/media/lcdsolid-vpzb-webfont.b9df3b6d35774784db2a.woff2",
+    "index.html": "/s29_new/index.html",
+    "main.9187f138.css.map": "/s29_new/static/css/main.9187f138.css.map",
+    "main.9d626073.js.map": "/s29_new/static/js/main.9d626073.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9187f138.css",
+    "static/js/main.9d626073.js"
+  ]
+}
