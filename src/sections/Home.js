@@ -1,4 +1,4 @@
 const Home = () => {
-  return <section>HOME</section>;
+  return <section id="home">HOME</section>;
 };
 export default Home;

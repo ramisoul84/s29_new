@@ -33,6 +33,13 @@ rect {
 .rect1 {
   height: calc(0.2 * var(--w) - 1px);
 }
+.door {
+  fill: tomato;
+  cursor: pointer;
+}
+.door:hover {
+  fill: blue;
+}
 
 @keyframes blink {
   0% {

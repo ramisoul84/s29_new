@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import "./intro.scss";
 const colors = [
@@ -226,18 +225,12 @@ const Intro = () => {
             <rect
               x={(startX + 4) * gridWidth + 1}
               y={6 * gridWidth + 1}
-              fill={getRandomColor()}
+              className="door"
+              onClick={() => {
+                document.getElementById("intro").style.display = "none";
+                document.getElementById("main").style.display = "flex";
+              }}
             />
-
-            <Link to="s29design">
-              <text
-                x={(startX + 4) * gridWidth + 10}
-                y={7 * gridWidth - 10}
-                fill="white"
-              >
-                Enter
-              </text>
-            </Link>
           </g>
         </svg>
       </div>
